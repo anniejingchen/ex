@@ -1,12 +1,4 @@
 language: java
-sudo: false
-install: mvn -Ptravis -DskipTests=true -nsu -B install
-script:
-  - mvn -Ptravis ${JACOCO} -nsu -B test
-  - find $HOME/.m2/repository/com/google/zxing -path "*SNAPSHOT/*" -delete
-  - find $HOME/.m2/repository/com/google/zxing -name "*SNAPSHOT" -type d -delete
 jdk: 
   - openjdk8
-
-
 
