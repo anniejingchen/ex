@@ -5,12 +5,8 @@ script:
   - mvn -Ptravis ${JACOCO} -nsu -B test
   - find $HOME/.m2/repository/com/google/zxing -path "*SNAPSHOT/*" -delete
   - find $HOME/.m2/repository/com/google/zxing -name "*SNAPSHOT" -type d -delete
-matrix:
-  include:
-    - jdk: openjdk8
-      env:
-        - JACOCO=-Pjacoco
-        - ANDROID_HOME=$HOME/android-sdk-linux
-      before_install: if [ ! -d $HOME/android-sdk-linux/platforms ]; 
+jdk: 
+  - openjdk8
+
 
 
